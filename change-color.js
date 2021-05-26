@@ -19,15 +19,15 @@ const randomIntegerFromInterval = (min, max) => {
 buttonStart.addEventListener('click', onButtonStartClick);
 buttonStop.addEventListener('click', onButtonStopClick);
 
-let intervalColorChange = undefined;
+let intervalColorChange = null;
 
 function onButtonStartClick(evt) {
-  buttonStart.setAttribute("disabled", "disabled");
-   intervalColorChange = setInterval(randomNumber => {
+  buttonStart.setAttribute("disabled", "true");
+  intervalColorChange = setInterval(randomNumber => {
     randomNumber = randomIntegerFromInterval(0, 5);
     changeBodyColor(colors[randomNumber]);
   }, 1000);
-  
+
 };
 
 function onButtonStopClick(evt) {
@@ -36,7 +36,7 @@ function onButtonStopClick(evt) {
 }
 
 function changeBodyColor(color) {
-bodyColor.style.backgroundColor = color;
+  bodyColor.style.backgroundColor = color;
 }
 
 
